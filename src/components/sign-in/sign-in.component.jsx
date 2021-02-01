@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from '../custom-button/custom-button';
+import CustomButton from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
 
 import { signInWithGoogle } from '../../firebase/firebase.utils';
@@ -37,7 +37,7 @@ class SignIn extends React.Component {
             type="email"
             name="email"
             value={this.state.email}
-            label="email"
+            label="Email"
             required
             handleChange={this.handleChange}
           />
@@ -46,7 +46,7 @@ class SignIn extends React.Component {
             type="password"
             name="password"
             value={this.state.password}
-            label="password"
+            label="Password"
             required
             handleChange={this.handleChange}
           />

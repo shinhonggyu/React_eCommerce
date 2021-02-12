@@ -1,14 +1,18 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import './App.css';
+
 import Header from './components/header/header.component';
 import HomePage from './pages/hompage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
+import { selectCurrentUser } from './redux/user/user.selectors';
+import CheckoutPage from './pages/checkout/checkout.component';
 
 class App extends React.Component {
   // Calling the unsubscribe function when the component is about to unmount is the best way to make sure we don't get any memory leaks in our application related to listeners still being open even if the component that cares about the listener is no longer on the page.
@@ -35,6 +39,7 @@ class App extends React.Component {
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
+    console.log('unmount');
   }
 
   render() {
@@ -44,6 +49,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
+          <Route exact path="/checkout" component={CheckoutPage} />
           <Route
             exact
             path="/signin"
@@ -61,12 +67,20 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+// const mapStateToProps = ({ user }) => ({
+//   currentUser: user.currentUser,
+// });
+
+// const mapStateToProps = (state) => ({
+//   currentUser: selectCurrentUser(state),
+// });
+
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  // get user obj -> call dispatch (action obj that i'm going to pass to every reducer)
+  // receive user obj -> call dispatch (action obj that i'm going to pass to every reducer)
   setCurrentUser: (user) => dispatch(setCurrentUser(user)), // action.payload
 });
 

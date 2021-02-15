@@ -1,3 +1,4 @@
+### heroku deploy: https://crwn-vshin.herokuapp.com/
 #### React Basic, React Router, Sass
 #### Firebase Auth(google, mail) , Cloude Database
 #### Redux

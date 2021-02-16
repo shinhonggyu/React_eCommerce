@@ -5,3 +5,4 @@
 #### mapStateToProps 에서 Reselect 라이브러리 성능최적화
 #### Array 대신 Object로 저장 (Hash Table data normalization)
 #### Styled-components
+#### Database에 item 저장

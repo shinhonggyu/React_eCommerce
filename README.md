@@ -6,3 +6,4 @@
 #### Array 대신 Object로 저장 (Hash Table data normalization)
 #### Styled-components
 #### Database에 items 저장후 Redux이용해 비동기로 가져와보여주기
+#### HOC Patterns

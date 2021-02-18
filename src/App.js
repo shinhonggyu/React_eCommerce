@@ -9,11 +9,13 @@ import Header from './components/header/header.component';
 import HomePage from './pages/hompage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import CheckoutPage from './pages/checkout/checkout.component';
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
-import CheckoutPage from './pages/checkout/checkout.component';
 
+// App only mounts once
 class App extends React.Component {
   // Calling the unsubscribe function when the component is about to unmount is the best way to make sure we don't get any memory leaks in our application related to listeners still being open even if the component that cares about the listener is no longer on the page.
   unsubscribeFromAuth = null;
@@ -39,7 +41,6 @@ class App extends React.Component {
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
-    console.log('unmount');
   }
 
   render() {

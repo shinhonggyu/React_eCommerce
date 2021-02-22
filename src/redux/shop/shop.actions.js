@@ -12,6 +12,7 @@ import ShopActionTypes from './shop.types';
 
 export const fetchCollectionStart = () => ({
   // Writing a function that returns an action === javascript object
+  // Thunk doesn't care about action objects.
   type: ShopActionTypes.FETCH_COLLECTIONS_START,
 });
 
@@ -29,6 +30,7 @@ export const fetchCollectionsStartAsync = () => {
   // return function gets a dispatch (multiple actions)
   return (dispatch) => {
     const collectionRef = firestore.collection('collections');
+    // now Thunk received dispatch to my reducer the normal objects
     dispatch(fetchCollectionStart());
 
     collectionRef

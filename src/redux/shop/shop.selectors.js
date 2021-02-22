@@ -34,3 +34,10 @@ export const selectIscollectionFetching = createSelector(
   [selectShop],
   (shop) => shop.isFetching
 );
+
+// Determines and returns a boolean value of whether or not our collection is null or not
+export const selectIsCollectionsLoaded = createSelector(
+  [selectShop],
+  (shop) => !!shop.collections
+  // collections 의 default값 null !!falsy => false
+);

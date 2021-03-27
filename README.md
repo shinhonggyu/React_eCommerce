@@ -11,3 +11,12 @@
 #### Database에 동적Data 저장후 componentDidMount()아닌 비동기 Redux이용후 재사용
 #### HOC Patterns 활용
 #### Observer Pattern , Promise Pattern, Container Pattern
+
+___
+
+#### **Core React**  
+1. 리액트❓  
+특히 SPA을 위한 사용자 인터페이스를 구축하는 데 사용되는 오픈 소스 프런트 엔드 JavaScript 라이브러리이다.  
+
+
+

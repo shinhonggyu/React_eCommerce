@@ -147,4 +147,40 @@ handleClick = (id) => () => {
 };
 ```
 
-04/06 16~20
+**synthetic events**  
+SyntheticEvent는 브라우저의 기본 이벤트를 둘러싼 브라우저 간 래퍼입니다.  
+API는 stopPropagation () 및 preventDefault ()를 포함한 브라우저의 기본 이벤트와 동일하지만 이벤트가 모든 브라우저에서 동일하게 작동한다는 점이 다릅니다.
+
+**inline conditional expressions**  
+조건부로 표현식을 렌더링하기 위해 if 문 또는 삼항 표현식을 사용할 수 있습니다.
+
+```js
+{
+  message.length > 0 && !isLogin ? (
+    <h2>You have {message.length} unread message;</h2>
+  ) : (
+    <h2>You don't have unread messages.</h2>
+  );
+}
+```
+
+**"Key"prop은 무엇이며 배열에서 사용하면 어떤 이점이 있습니까?**  
+key는 배열요소를 만들 때 포함해야하는 특수 문자열 속성입니다.  
+Key prop은 React가 어떤 항목이 변경, 추가 또는 제거되었는지 식별하는 데 도움이됩니다.  
+대부분 데이터의 ID를 키로 사용합니다.
+
+```js
+const todoItems = todos.map((todo) => <li key={todo.id}>{todo.text}</li>);
+```
+
+렌더링 된 items에 대한 안정적인 ID가없는 경우 마지막 수단으로 항목 인덱스를 키로 사용할 수 있습니다.
+
+- items 순서가 변경 될 수있는 경우 키에 인덱스를 사용하지 않는 것이 좋습니다.  
+  이는 성능에 부정적인 영향을 미치고 component state에 문제를 일으킬 수 있습니다.
+- list item을 별도의 component로 추출하는 경우 li 태그 대신 list component에 키를 적용하십시오.
+
+**refs는 언제 사용?**  
+ref는 요소에 대한 참조를 반환하는 데 사용됩니다.  
+대부분의 경우 피해야하지만 DOM 요소 또는 component의 인스턴스에 직접 액세스해야하는 경우 유용 할 수 있습니다.
+
+4/06/21~

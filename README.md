@@ -183,4 +183,13 @@ const todoItems = todos.map((todo) => <li key={todo.id}>{todo.text}</li>);
 ref는 요소에 대한 참조를 반환하는 데 사용됩니다.  
 대부분의 경우 피해야하지만 DOM 요소 또는 component의 인스턴스에 직접 액세스해야하는 경우 유용 할 수 있습니다.
 
-4/06/21~
+**Virtual DOM이 작동하는 방식**  
+Virtual DOM은 세 가지 간단한 단계로 작동합니다.
+
+1. 기본 데이터가 변경 될 때마다 전체 UI가 Virtual DOM 표현으로 다시 렌더링됩니다.
+
+2. 그런 다음 이전 DOM 표현과 새 DOM 표현의 차이가 계산됩니다.
+
+3. 계산이 완료되면 실제 DOM은 실제로 변경된 것만 업데이트됩니다.
+
+4/11/26~

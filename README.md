@@ -20,11 +20,11 @@
 
 #### HOC Patterns , Observer Pattern , Promise Pattern , Container Pattern
 
-#### Hooks, Custom Hokks
+#### Hooks, Custom Hoks, useReducer, react-router hooks, react-redux hooks
 
 #### Context API
 
-#### Perfomance
+#### Perfomance(reactLazy, useCallback, useMemo, ...)
 
 #### PWA
 

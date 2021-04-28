@@ -6,7 +6,7 @@
 
 #### Redux
 
-#### Redux-Thunk (async handling, multiple action)
+#### Redux-Thunk (async multiple action)
 
 #### Redux-Saga
 
